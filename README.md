@@ -9,16 +9,18 @@ In this project I would like to show how basic controls placed on a network can 
 
 We will build a small network with a windows virtual machine running a SQL database, a linux virtual machine, an Azure Key Vault, Azure storage account, and Microsoft Entry ID components. We will leave this network completely exposed to the internet for 24 hours. During this time log files tracking brute force password attempts, system changes, virus and malware, as well as changes to critical Azure subscription services will be tracked and plotted on maps using the Azure SIEM (Security Information and Event Management) Microsoft Sentinel. The log files we will track are:
 
-SecurityEvent (Windows Event Logs)</br>
-Syslog (Linux Event Logs)</br>
-SecurityAlert (Log Analytics Alerts Triggered)</br>
-SecurityIncident (Incidents created by Sentinel)</br>
-AzureNetworkAnalytics_CL (Malicious Flows allowed into our honeynet)</br>
+- SecurityEvent (Windows Event Logs)</br>
+- Syslog (Linux Event Logs)</br>
+- SecurityAlert (Log Analytics Alerts Triggered)</br>
+- SecurityIncident (Incidents created by Sentinel)</br>
+- AzureNetworkAnalytics_CL (Malicious Flows allowed into our honeynet)</br>
 ## Architecture Before Hardening / Security Controls
-![Architecture Diagram](https://i.imgur.com/aBDwnKb.jpg)
+![Vulnerable 2](https://github.com/zacharywilliams05/Azure-SOC-Honeynet-with-Live-Traffic/assets/82168122/dcec216e-aca3-4b2b-89fd-522c4085a130)
+
 
 ## Architecture After Hardening / Security Controls
-![Architecture Diagram](https://i.imgur.com/YQNa9Pp.jpg)
+!![Vulnerable 3](https://github.com/zacharywilliams05/Azure-SOC-Honeynet-with-Live-Traffic/assets/82168122/bc12779e-97d7-4a82-b0cc-f355496f6991)
+
 
 The architecture of the mini honeynet in Azure consists of the following components:
 
@@ -30,7 +32,7 @@ The architecture of the mini honeynet in Azure consists of the following compone
 - Azure Storage Account
 - Microsoft Sentinel
 
-For the "BEFORE" metrics, all resources were originally deployed, exposed to the internet. The Virtual Machines had both their Network Security Groups and built-in firewalls wide open, and all other resources are deployed with public endpoints visible to the Internet; aka, no use for Private Endpoints.
+For the "BEFORE" metrics, all resources were originally deployed, exposed to the internet. The Virtual Machines had both their Network Security Groups and built-in firewalls wide open, and all other resources are deployed with public endpoints visible to the Internet; aka, no use of Private Endpoints.
 
 For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL traffic with the exception of my admin workstation, and all other resources were protected by their built-in firewalls as well as Private Endpoint
 
