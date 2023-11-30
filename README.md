@@ -19,7 +19,7 @@ We will build a small network with a windows virtual machine running a SQL datab
 
 
 ## Architecture After Hardening / Security Controls
-!![Vulnerable 3](https://github.com/zacharywilliams05/Azure-SOC-Honeynet-with-Live-Traffic/assets/82168122/bc12779e-97d7-4a82-b0cc-f355496f6991)
+![Vulnerable 3](https://github.com/zacharywilliams05/Azure-SOC-Honeynet-with-Live-Traffic/assets/82168122/bc12779e-97d7-4a82-b0cc-f355496f6991)
 
 
 The architecture of the mini honeynet in Azure consists of the following components:
@@ -37,23 +37,32 @@ For the "BEFORE" metrics, all resources were originally deployed, exposed to the
 For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL traffic with the exception of my admin workstation, and all other resources were protected by their built-in firewalls as well as Private Endpoint
 
 ## Attack Maps Before Hardening / Security Controls
-![NSG Allowed Inbound Malicious Flows](https://i.imgur.com/1qvswSX.png)<br>
-![Linux Syslog Auth Failures](https://i.imgur.com/G1YgZt6.png)<br>
-![Windows RDP/SMB Auth Failures](https://i.imgur.com/ESr9Dlv.png)<br>
+<img width="800" alt="image" src="https://github.com/zacharywilliams05/Azure-SOC-Honeynet-with-Live-Traffic/assets/82168122/a5f96e5e-d42d-486d-833a-7cff1c7f643f"></br>
+
+<img width="800" alt="image" src="https://github.com/zacharywilliams05/Azure-SOC-Honeynet-with-Live-Traffic/assets/82168122/1b2f80e5-ffbe-403a-8f08-e6c3950502a2"></br>
+
+<img width="800" alt="image" src="https://github.com/zacharywilliams05/Azure-SOC-Honeynet-with-Live-Traffic/assets/82168122/006dfd98-0498-49e4-b33c-f10723e05bec"></br>
+
+<img width="800" alt="image" src="https://github.com/zacharywilliams05/Azure-SOC-Honeynet-with-Live-Traffic/assets/82168122/2f8e18dc-29ee-49dc-9920-f07c6e34584c">
+
+
+
+
 
 ## Metrics Before Hardening / Security Controls
 
-The following table shows the metrics we measured in our insecure environment for 24 hours:
-Start Time 2023-03-15 17:04:29
-Stop Time 2023-03-16 17:04:29
+The following table shows the metrics we measured in our insecure environment for 24 hours:</br>
+Start Time 11/28/2023, 7:36:17</br>
+Stop Time 11/29/2023, 7:36:17</br>
+
 
 | Metric                   | Count
 | ------------------------ | -----
-| SecurityEvent            | 19470
-| Syslog                   | 3028
-| SecurityAlert            | 10
-| SecurityIncident         | 348
-| AzureNetworkAnalytics_CL | 843
+| SecurityEvent            | 12673
+| Syslog                   | 3985
+| SecurityAlert            | 6
+| SecurityIncident         | 52
+| AzureNetworkAnalytics_CL | 68674
 
 ## Attack Maps Before Hardening / Security Controls
 
