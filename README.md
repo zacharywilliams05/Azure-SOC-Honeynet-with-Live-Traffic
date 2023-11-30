@@ -1,16 +1,19 @@
 # Building a SOC + Honeynet in Azure (Live Traffic)
-![Cloud Honeynet / SOC](https://i.imgur.com/ZWxe03e.jpg)
+
+![Vulnerable](https://github.com/zacharywilliams05/Azure-SOC-Honeynet-with-Live-Traffic/assets/82168122/715fc3f6-198a-4a27-ba64-60ffc6b0c2fe)
+
 
 ## Introduction
 
-In this project, I build a mini honeynet in Azure and ingest log sources from various resources into a Log Analytics workspace, which is then used by Microsoft Sentinel to build attack maps, trigger alerts, and create incidents. I measured some security metrics in the insecure environment for 24 hours, apply some security controls to harden the environment, measure metrics for another 24 hours, then show the results below. The metrics we will show are:
+In this project I would like to show how basic controls placed on a network can have a drastic reduction in risk compared to a network that is exposed. It may seem a forgone conclusion that a secure network is at less risk than one with a few controls, however the magnitude and the ease of instituting these controls may not be apparent. Many home networks as well as small and medium sized businesses may be at unnecessary risk.
 
-- SecurityEvent (Windows Event Logs)
-- Syslog (Linux Event Logs)
-- SecurityAlert (Log Analytics Alerts Triggered)
-- SecurityIncident (Incidents created by Sentinel)
-- AzureNetworkAnalytics_CL (Malicious Flows allowed into our honeynet)
+We will build a small network with a windows virtual machine running a SQL database, a linux virtual machine, an Azure Key Vault, Azure storage account, and Microsoft Entry ID components. We will leave this network completely exposed to the internet for 24 hours. During this time log files tracking brute force password attempts, system changes, virus and malware, as well as changes to critical Azure subscription services will be tracked and plotted on maps using the Azure SIEM (Security Information and Event Management) Microsoft Sentinel. The log files we will track are:
 
+SecurityEvent (Windows Event Logs)</br>
+Syslog (Linux Event Logs)</br>
+SecurityAlert (Log Analytics Alerts Triggered)</br>
+SecurityIncident (Incidents created by Sentinel)</br>
+AzureNetworkAnalytics_CL (Malicious Flows allowed into our honeynet)</br>
 ## Architecture Before Hardening / Security Controls
 ![Architecture Diagram](https://i.imgur.com/aBDwnKb.jpg)
 
