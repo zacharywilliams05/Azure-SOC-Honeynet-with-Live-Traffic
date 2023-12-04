@@ -35,6 +35,9 @@ The architecture of the mini honeynet in Azure consists of the following compone
 For the "BEFORE" metrics, all resources were originally deployed, exposed to the internet. The Virtual Machines had both their Network Security Groups and built-in firewalls wide open, and all other resources are deployed with public endpoints visible to the Internet; aka, no use of Private Endpoints.
 
 For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL traffic with the exception of my admin workstation, and all other resources were protected by their built-in firewalls as well as Private Endpoint
+## SOC Setup and Incident Creation
+![Log Flows and Incident Creation](https://github.com/zacharywilliams05/Azure-SOC-Honeynet-with-Live-Traffic/assets/82168122/b2c65025-78a9-4af6-a85d-fed0c794589d)
+
 
 ## Attack Maps Before Hardening / Security Controls
 <img width="800" alt="image" src="https://github.com/zacharywilliams05/Azure-SOC-Honeynet-with-Live-Traffic/assets/82168122/a5f96e5e-d42d-486d-833a-7cff1c7f643f"></br>
