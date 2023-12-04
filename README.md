@@ -81,8 +81,8 @@ Stop Time	2023-03-19 15:37
 
 The controls used to harden our environment were as follows:
 
-- windows-vm and linux-vm: Hardened the network security group to only allow my public IP address. This completely elimiinated the malicious traffic that was targetting the virtual machines.</br>
-- SQL-server: The SQL server was secured by hardneing the virtual machines network security group and adding a network security group to the subnet itself. This completely eliminated the malicous traffic targetting the virutal machines.</br>
+- windows-vm and linux-vm bruteforce attempts logged in Security Events (Windows), and Syslog (Linux): Hardened the network security group to only allow my public IP address. This completely elimiinated the malicious traffic that was targetting the virtual machines.</br>
+- SQL-server bruteforce attempts logged in Security : The SQL server was secured by hardneing the virtual machines network security group and adding a network security group to the subnet itself. This completely eliminated the malicous traffic targetting the virutal machines.</br>
 - Azure Key Vault: Enabled diagnostic settings and logging to trigger incidents when someone accesses, views, copies, changes secret key entries in the Azure Key Vault. Will alert and make auditing and investigating possible. </br>
 - Azure Storage Account: Enabled diagnostic settings and logging to trigger incidents when someone uploads, makes changes to, deletes files in storage account. Will alert and make auditing and investigating possible.</br>
 - Azure Entra ID: Enabled diagnostic settings and logging to trigger incidents when someone makes changes at the tenent level. Will alert and make auditing and investigating possible.</br>
